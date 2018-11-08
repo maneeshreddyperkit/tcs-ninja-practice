@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include<string.h>
+isEqual(char* str);
+
+int main()
+{
+    char* str[100];
+    scanf("%s",&str);
+    isEqual(str);
+    return 0;
+}
+isEqual(char* str)
+{
+    int n=strlen(str);
+    int i,x=1,num=0;
+    for(i=n-1;i>=0;i--)
+    {
+    if(str[i]>='0' && str[i]<='9')
+ 
+   {
+    num=(str[i]-'0')*x+num;
+    x=x*10;
+    }
+    else
+    break;
+    }
+    if(num==n-1)
+        printf("equal");
+    else
+        printf("not equal");
+}
